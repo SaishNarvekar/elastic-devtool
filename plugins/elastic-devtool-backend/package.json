@@ -11,7 +11,11 @@
   },
   "backstage": {
     "role": "backend-plugin",
-    "pluginId": "elastic-devtool"
+    "pluginId": "elastic-devtool",
+    "pluginPackages": [
+      "@saishnarvekar/plugin-elastic-devtool",
+      "@saishnarvekar/plugin-elastic-devtool-backend"
+    ]
   },
   "scripts": {
     "start": "backstage-cli package start",
