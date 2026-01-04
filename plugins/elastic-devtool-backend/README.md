@@ -79,4 +79,4 @@ This will launch a local backend server for rapid development and testing.
 ---
 
 > [!IMPORTANT]
-> Use together with [`@saishnarvekar/plugin-elastic-devtool`](../elastic-devtool/) for a complete frontend + backend solution.
+> Use together with [`@saishnarvekar/plugin-elastic-devtool`](https://www.npmjs.com/package/@saishnarvekar/plugin-elastic-devtool) for a complete frontend + backend solution.
