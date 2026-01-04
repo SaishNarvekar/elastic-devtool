@@ -26,9 +26,9 @@ export const elasticDevtoolPlugin = createPlugin({
   },
 });
 
-export const ElasticDevtoolPage = elasticDevtoolPlugin.provide(
+export const ElasticDevToolPage = elasticDevtoolPlugin.provide(
   createRoutableExtension({
-    name: 'ElasticDevtoolPage',
+    name: 'ElasticDevToolPage',
     component: () =>
       import('./components/HomeComponent').then(m => m.HomeComponent),
     mountPoint: rootRouteRef,

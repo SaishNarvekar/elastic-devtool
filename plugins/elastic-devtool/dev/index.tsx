@@ -1,10 +1,10 @@
 import { createDevApp } from '@backstage/dev-utils';
-import { elasticDevtoolPlugin, ElasticDevtoolPage } from '../src/plugin';
+import { elasticDevtoolPlugin, ElasticDevToolPage } from '../src/plugin';
 
 createDevApp()
   .registerPlugin(elasticDevtoolPlugin)
   .addPage({
-    element: <ElasticDevtoolPage />,
+    element: <ElasticDevToolPage />,
     title: 'Root Page',
     path: '/elastic-devtool',
   })
