@@ -7,6 +7,8 @@ import {
   TableHead,
   TableRow,
 } from '@material-ui/core';
+import Editor from '@monaco-editor/react';
+import { useTheme } from '@material-ui/core/styles';
 
 type ElasticQueryResponseProps = {
   response: any;
@@ -17,14 +19,27 @@ export const ElasticQueryResponseComponent = ({
   response,
   isTable,
 }: ElasticQueryResponseProps) => {
+  const theme = useTheme();
+  const userTheme = theme.palette.type === 'dark' ? 'vs-dark' : 'light';
+
   if (!response) return null;
 
   if (!isTable) {
     return (
       <div>
-        <pre style={{ background: '#111', color: '#0f0', padding: 16 }}>
-          {JSON.stringify(response, null, 2)}
-        </pre>
+        <Editor
+          height="400px"
+          language="json"
+          value={JSON.stringify(response, null, 2)}
+          options={{
+            readOnly: true,
+            minimap: { enabled: false },
+            scrollBeyondLastLine: false,
+            wordWrap: 'on',
+            automaticLayout: true,
+          }}
+          theme={userTheme}
+        />
       </div>
     );
   }
