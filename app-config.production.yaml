@@ -53,3 +53,9 @@ catalog:
       target: ./examples/org.yaml
       rules:
         - allow: [User, Group]
+
+elastic-devtool:
+  elasticsearch:
+    node: '${ELASTICSEARCH_NODE}'
+    username: '${ELASTICSEARCH_USERNAME}'
+    password: '${ELASTICSEARCH_PASSWORD}'

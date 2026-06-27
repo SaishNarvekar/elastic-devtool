@@ -110,3 +110,9 @@ kubernetes:
 permission:
   # setting this to `false` will disable permissions
   enabled: true
+
+elastic-devtool:
+  elasticsearch:
+    node: '${ELASTICSEARCH_NODE}'
+    username: '${ELASTICSEARCH_USERNAME}'
+    password: '${ELASTICSEARCH_PASSWORD}'
