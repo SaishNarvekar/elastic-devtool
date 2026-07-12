@@ -1,4 +1,5 @@
 import {
+  Button,
   Paper,
   Table,
   TableBody,
@@ -9,6 +10,13 @@ import {
 } from '@material-ui/core';
 import Editor from '@monaco-editor/react';
 import { useTheme } from '@material-ui/core/styles';
+import { useState } from 'react';
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+} from '@material-ui/core';
 
 type ElasticQueryResponseProps = {
   response: any;
@@ -21,6 +29,18 @@ export const ElasticQueryResponseComponent = ({
 }: ElasticQueryResponseProps) => {
   const theme = useTheme();
   const userTheme = theme.palette.type === 'dark' ? 'vs-dark' : 'light';
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [selectedDocument, setSelectedDocument] = useState<any>(null);
+
+  const handleOpenDocument = (document: any) => {
+    setSelectedDocument(document);
+    setDialogOpen(true);
+  };
+
+  const handleCloseDocument = () => {
+    setDialogOpen(false);
+    setSelectedDocument(null);
+  };
 
   if (!response) return null;
 
@@ -52,16 +72,26 @@ export const ElasticQueryResponseComponent = ({
     Object.keys(hit._source).forEach(key => sourceHeaders.add(key));
   });
 
-  const headers = [...sourceHeaders];
+  const headers = [...sourceHeaders, 'actions'];
 
   const rows = hits.map((hit: any) => {
     const row = {
       ...hit._source,
+      actions: (
+        <Button
+          variant="outlined"
+          size="small"
+          onClick={() => handleOpenDocument(hit._source)}
+        >
+          View Document
+        </Button>
+      ),
     };
     return row;
   });
 
   return (
+    <>
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
@@ -83,5 +113,25 @@ export const ElasticQueryResponseComponent = ({
         </TableBody>
       </Table>
     </TableContainer>
+
+      <Dialog
+        open={dialogOpen}
+        onClose={handleCloseDocument}
+        fullWidth
+        maxWidth="md"
+      >
+        <DialogTitle>Document Preview</DialogTitle>
+        <DialogContent>
+          <pre style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
+            {JSON.stringify(selectedDocument, null, 2)}
+          </pre>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseDocument} color="primary">
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
   );
 };
