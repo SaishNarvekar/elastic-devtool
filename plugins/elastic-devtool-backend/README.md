@@ -1,28 +1,81 @@
-# elastic-devtool
+developing the plugin backend itself.
 
-This plugin backend was templated using the Backstage CLI. You should replace this text with a description of your plugin backend.
+# Elastic Dev Tool Plugin for Backstage (Backend)
+
+![Backstage Logo](https://backstage.io/img/logo.svg)
+
+> [!TIP]
+> Backend API for Elasticsearch management and query in Backstage.
+
+---
+
+## Overview
+
+`@saishnarvekar/plugin-elastic-devtool-backend` provides the backend API and service layer for the Elastic Dev Tool plugin, enabling secure, robust Elasticsearch operations from your Backstage instance.
+
+---
+
+## Features
+
+- REST API for Elasticsearch query and index management
+- Secure proxy to your Elasticsearch cluster
+- Cluster health and stats endpoints
+- Built with Backstage backend best practices
+
+---
 
 ## Installation
 
-This plugin is installed via the `@saishnarvekar/plugin-elastic-devtool-backend` package. To install it to your backend package, run the following command:
+Add the backend plugin to your Backstage backend:
 
 ```bash
-# From your root directory
 yarn --cwd packages/backend add @saishnarvekar/plugin-elastic-devtool-backend
 ```
 
-Then add the plugin to your backend in `packages/backend/src/index.ts`:
+---
+
+## Usage
+
+Register the plugin in your backend (e.g. in `packages/backend/src/index.ts`):
 
 ```ts
+import { elasticDevToolPlugin } from '@saishnarvekar/plugin-elastic-devtool-backend';
+
 const backend = createBackend();
-// ...
-backend.add(import('@saishnarvekar/plugin-elastic-devtool-backend'));
+// ...existing code...
+backend.add(elasticDevToolPlugin());
 ```
+
+Configure your Elasticsearch connection in `app-config.yaml`:
+
+```yaml
+elastic:
+	baseUrl: 'http://localhost:9200'
+	username: 'elastic'  # optional
+	password: 'password' # optional
+```
+
+---
 
 ## Development
 
-This plugin backend can be started in a standalone mode from directly in this
-package with `yarn start`. It is a limited setup that is most convenient when
-developing the plugin backend itself.
+To run the backend plugin in isolation for development:
 
-If you want to run the entire project, including the frontend, run `yarn start` from the root directory.
+```bash
+yarn start
+```
+
+This will launch a local backend server for rapid development and testing.
+
+---
+
+## Resources
+
+- [Backstage Backend Plugins](https://backstage.io/docs/backend-system/)
+- [Elasticsearch Node.js Client](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/)
+- [Backstage Plugin Authoring](https://backstage.io/docs/plugins/)
+
+---
+
+> [!IMPORTANT]
+> Use together with [`@saishnarvekar/plugin-elastic-devtool`](../elastic-devtool/) for a complete frontend + backend solution.
