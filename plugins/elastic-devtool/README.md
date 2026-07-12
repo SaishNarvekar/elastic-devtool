@@ -80,4 +80,4 @@ This will launch a local Backstage instance with the plugin enabled for rapid it
 ---
 
 > [!IMPORTANT]
-> For backend API support, see [`@saishnarvekar/plugin-elastic-devtool-backend`](../elastic-devtool-backend/).
+> For backend API support, see [`@saishnarvekar/plugin-elastic-devtool-backend`](https://www.npmjs.com/package/@saishnarvekar/plugin-elastic-devtool-backend).

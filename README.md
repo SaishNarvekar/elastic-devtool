@@ -124,10 +124,11 @@ backend.add(import('@saishnarvekar/plugin-elastic-devtool-backend'));
 Configure the plugin in your `app-config.yaml`:
 
 ```yaml
-elastic:
-  baseUrl: 'http://localhost:9200'
-  username: 'elastic'  # optional
-  password: 'password' # optional
+elastic-devtool:
+  elasticsearch:
+    node: 'https://localhost:9200'
+    username: 'elastic' # optional
+    password: 'password' # optional
 ```
 
 ## Development
@@ -186,8 +187,8 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 ## Support
 
-- [Issues](https://github.com/your-org/backstage-elastic-devtool/issues)
-- [Discussions](https://github.com/your-org/backstage-elastic-devtool/discussions)
+- [Issues](https://github.com/SaishNarvekar/elastic-devtool/issues)
+- [Discussions](https://github.com/SaishNarvekar/elastic-devtool/discussions)
 - [Backstage Community](https://backstage.io/community)
 
 ## Resources
