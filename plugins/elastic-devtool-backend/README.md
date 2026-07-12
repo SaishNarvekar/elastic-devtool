@@ -7,13 +7,9 @@ developing the plugin backend itself.
 > [!TIP]
 > Backend API for Elasticsearch management and query in Backstage.
 
----
-
 ## Overview
 
 `@saishnarvekar/plugin-elastic-devtool-backend` provides the backend API and service layer for the Elastic Dev Tool plugin, enabling secure, robust Elasticsearch operations from your Backstage instance.
-
----
 
 ## Features
 
@@ -22,7 +18,13 @@ developing the plugin backend itself.
 - Cluster health and stats endpoints
 - Built with Backstage backend best practices
 
----
+### Screenshots
+
+**Home Interface**
+![Home Interface](https://raw.githubusercontent.com/SaishNarvekar/elastic-devtool/refs/heads/main/images/home.png)
+
+**Table Results View**
+![Table Results View](https://raw.githubusercontent.com/SaishNarvekar/elastic-devtool/refs/heads/main/images/table.png)
 
 ## Installation
 
@@ -31,8 +33,6 @@ Add the backend plugin to your Backstage backend:
 ```bash
 yarn --cwd packages/backend add @saishnarvekar/plugin-elastic-devtool-backend
 ```
-
----
 
 ## Usage
 
@@ -56,8 +56,6 @@ elastic-devtool:
     password: 'password' # optional
 ```
 
----
-
 ## Development
 
 To run the backend plugin in isolation for development:
@@ -67,8 +65,6 @@ yarn start
 ```
 
 This will launch a local backend server for rapid development and testing.
-
----
 
 ## Resources
 

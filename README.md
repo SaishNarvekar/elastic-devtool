@@ -22,6 +22,14 @@ The included Backstage application serves as a development and testing environme
 - **Development Environment**: Full Backstage setup for plugin development and testing
 - **Open Source**: Community-driven development with contribution guidelines
 
+### Screenshots
+
+**Home Interface**
+![Home Interface](./images/home.png)
+
+**Table Results View**
+![Table Results View](./images/table.png)
+
 ## Getting Started
 
 ### Prerequisites

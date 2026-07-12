@@ -12,7 +12,6 @@
 
 `@saishnarvekar/plugin-elastic-devtool` is a feature-rich Backstage plugin that brings Elasticsearch query, index, and cluster management directly into your developer portal. Designed for extensibility and ease of use, it empowers teams to interact with Elasticsearch from a unified interface.
 
----
 
 ## Features
 
@@ -22,7 +21,13 @@
 - Cluster health and stats dashboard
 - Works with Backstage's permission and plugin system
 
----
+### Screenshots
+
+**Home Interface**
+![Home Interface](https://raw.githubusercontent.com/SaishNarvekar/elastic-devtool/refs/heads/main/images/home.png)
+
+**Table Results View**
+![Table Results View](https://raw.githubusercontent.com/SaishNarvekar/elastic-devtool/refs/heads/main/images/table.png)
 
 ## Installation
 
@@ -57,8 +62,6 @@ elastic-devtool:
 
 Start your Backstage app and navigate to `/elastic-devtool` in the sidebar.
 
----
-
 ## Development
 
 To develop or test the plugin in isolation:
@@ -68,8 +71,6 @@ yarn start
 ```
 
 This will launch a local Backstage instance with the plugin enabled for rapid iteration.
-
----
 
 ## Resources
 
