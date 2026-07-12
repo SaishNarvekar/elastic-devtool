@@ -37,7 +37,7 @@ import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { NotificationsPage } from '@backstage/plugin-notifications';
 import { SignalsDisplay } from '@backstage/plugin-signals';
-import { ElasticDevtoolPage } from '@saishnarvekar/plugin-elastic-devtool';
+import { ElasticDevToolPage } from '@saishnarvekar/plugin-elastic-devtool';
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
 
 const app = createApp({
@@ -99,7 +99,7 @@ const routes = (
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
     <Route path="/notifications" element={<NotificationsPage />} />
-    <Route path="/elastic-devtool" element={<ElasticDevtoolPage />} />
+    <Route path="/elastic-devtool" element={<ElasticDevToolPage />} />
   </FlatRoutes>
 );
 

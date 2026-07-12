@@ -1,1 +1,1 @@
-export { elasticDevtoolPlugin, ElasticDevtoolPage } from './plugin';
+export { elasticDevtoolPlugin, ElasticDevToolPage } from './plugin';

@@ -49,10 +49,11 @@ backend.add(elasticDevToolPlugin());
 Configure your Elasticsearch connection in `app-config.yaml`:
 
 ```yaml
-elastic:
-	baseUrl: 'http://localhost:9200'
-	username: 'elastic'  # optional
-	password: 'password' # optional
+elastic-devtool:
+  elasticsearch:
+    node: 'https://localhost:9200'
+    username: 'elastic' # optional
+    password: 'password' # optional
 ```
 
 ---

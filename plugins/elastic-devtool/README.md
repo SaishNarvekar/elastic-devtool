@@ -48,10 +48,11 @@ import { ElasticDevToolPage } from '@saishnarvekar/plugin-elastic-devtool';
 Configure your Elasticsearch connection in `app-config.yaml`:
 
 ```yaml
-elastic:
-	baseUrl: 'http://localhost:9200'
-	username: 'elastic'  # optional
-	password: 'password' # optional
+elastic-devtool:
+  elasticsearch:
+    node: 'https://localhost:9200'
+    username: 'elastic' # optional
+    password: 'password' # optional
 ```
 
 Start your Backstage app and navigate to `/elastic-devtool` in the sidebar.
