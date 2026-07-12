@@ -11,7 +11,11 @@
   },
   "backstage": {
     "role": "frontend-plugin",
-    "pluginId": "elastic-devtool"
+    "pluginId": "elastic-devtool",
+    "pluginPackages": [
+      "@saishnarvekar/plugin-elastic-devtool",
+      "@saishnarvekar/plugin-elastic-devtool-backend"
+    ]
   },
   "sideEffects": false,
   "scripts": {
