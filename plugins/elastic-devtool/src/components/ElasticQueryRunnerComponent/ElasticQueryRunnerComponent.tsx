@@ -5,13 +5,16 @@ import {
   Button,
   CircularProgress,
   FormControl,
+  FormControlLabel,
   Grid,
   InputLabel,
   MenuItem,
   Select,
+  Switch,
   TextField,
 } from '@material-ui/core';
 import { elasticDevToolApiRef } from '../../ElasticDevToolApi';
+import { ElasticQueryResponseComponent } from '../ElasticQueryResponseComponent';
 
 export const ElasticQueryRunnerComponent = () => {
   const apiClient = useApi(elasticDevToolApiRef);
@@ -20,6 +23,7 @@ export const ElasticQueryRunnerComponent = () => {
   const [selectedIndex, setSelectedIndex] = useState('');
   const [queryText, setQueryText] = useState('');
   const [response, setResponse] = useState<any>(null);
+  const [isTable, setIsTable] = useState(true);
 
   const {
     value: indices,
@@ -104,11 +108,20 @@ export const ElasticQueryRunnerComponent = () => {
         </Button>
       </Grid>
       <Grid item>
-        {response && (
-          <pre style={{ background: '#111', color: '#0f0', padding: 16 }}>
-            {JSON.stringify(response, null, 2)}
-          </pre>
-        )}
+        <FormControlLabel
+          control={
+            <Switch
+              checked={isTable}
+              onChange={e => setIsTable(e.target.checked)}
+              name="checkedB"
+              color="primary"
+            />
+          }
+          label="Display as Table"
+        />
+      </Grid>
+      <Grid item>
+        <ElasticQueryResponseComponent response={response} isTable={isTable} />
       </Grid>
     </Grid>
   );
