@@ -97,28 +97,30 @@ export const ElasticQueryRunnerComponent = () => {
           placeholder={`{ "query": { "match_all": {} } }`}
         />
       </Grid>
-      <Grid item>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={runQuery}
-          disabled={!selectedIndex}
-        >
-          Run Query
-        </Button>
-      </Grid>
-      <Grid item>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={isTable}
-              onChange={e => setIsTable(e.target.checked)}
-              name="checkedB"
-              color="primary"
-            />
-          }
-          label="Display as Table"
-        />
+      <Grid container item>
+        <Grid item>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={runQuery}
+            disabled={!selectedIndex}
+          >
+            Run Query
+          </Button>
+        </Grid>
+        <Grid item>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={isTable}
+                onChange={e => setIsTable(e.target.checked)}
+                name="checkedB"
+                color="primary"
+              />
+            }
+            label="Display as Table"
+          />
+        </Grid>
       </Grid>
       <Grid item>
         <ElasticQueryResponseComponent response={response} isTable={isTable} />
